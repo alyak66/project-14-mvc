@@ -1,0 +1,44 @@
+<!DOCTYPE html>>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>The Tech Blog</title>
+    <link rel='stylesheet' href='/stylesheets/style.css'>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>
+                <a href="/"><span>Tech Blog</span></a>
+            </h1>
+            <nav>
+                <ul>
+                    {{#if loggedIn}}
+                    <li><a href="/dashboard"><span>Dashboard</span></a></li>
+                    <li><button id="logout" class="main-btns"><span>Logout</span></button></li>
+
+                    {{else}}
+                    <li><a href="/login"><span>Login</span></a></li>
+                    {{/if}}
+                </ul>
+
+            </nav>
+        </header>
+
+        <main>
+            {{{ body }}}
+        </main>
+        <footer>
+            Tech Blog 2020
+        </footer>
+    </div>
+
+</body>
+{{#if loggedIn}}
+<script src="/javascript/logout.js"></script>
+{{/if}}
+
+</html>
